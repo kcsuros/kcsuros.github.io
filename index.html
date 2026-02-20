@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karla Csuros | Corpus Linguist & Digital Humanities Researcher</title>
+    <meta name="description" content="PhD researcher specializing in corpus linguistics, telecinematic discourse, and data-driven language learning">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c5f6f;
+            --accent: #d4735e;
+            --text: #1a1a1a;
+            --text-light: #4a4a4a;
+            --bg: #fdfbf7;
+            --bg-alt: #f5f1eb;
+            --border: #e8dfd0;
+            --highlight: #fef6e8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+            position: relative;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(212, 115, 94, 0.08) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, 30px) rotate(5deg); }
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image-container {
+            flex-shrink: 0;
+            width: 280px;
+            height: 280px;
+            position: relative;
+        }
+
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--accent);
+            opacity: 0.3;
+            animation: imageBorderPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes imageBorderPulse {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-5px, -5px); }
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            filter: grayscale(0%) contrast(1.05) brightness(1.02);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 968px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                gap: 3rem;
+            }
+
+            .hero-image-container {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            font-family: 'Crimson Pro', serif;
+            padding: 0.9rem 2rem;
+            border: 2px solid var(--primary);
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline::before {
+            background: var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border);
+            transform: translateY(-100%);
+            animation: slideDown 0.6s ease-out 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            to { transform: translateY(0); }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Section Styling */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Research Interests */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .interest-card {
+            background: white;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .interest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease;
+        }
+
+        .interest-card:hover::before {
+            height: 100%;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .interest-card h3 {
+            font-family: 'DM Serif Display', serif;
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects */
+        .projects-container {
+            display: grid;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .project {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            gap: 2rem;
+        }
+
+        .project-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-period {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--highlight);
+            border: 1px solid var(--border);
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text);
+        }
+
+        /* Awards */
+        .awards-timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 3rem;
+        }
+
+        .awards-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .award {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .award::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg);
+        }
+
+        .award-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-description {
+            color: var(--text-light);
+        }
+
+        /* Publications */
+        .publications-list {
+            margin-top: 3rem;
+        }
+
+        .publication {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .publication-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .publication-venue {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .publication-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .publication-link:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number.loading {
+            opacity: 0.5;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .stat-updated {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            opacity: 0.6;
+            margin-top: 0.5rem;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            background: var(--accent);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 115, 94, 0.3);
+        }
+
+        .footer-note {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                gap: 2rem;
+            }
+
+            .hero-image-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-links {
+                flex-direction: column;
+            }
+
+            .project-header {
+                flex-direction: column;
+            }
+
+            .awards-timeline {
+                padding-left: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-subtitle">Corpus Linguist & Digital Humanities Researcher</div>
+                <h1 class="hero-title">Karla Csuros</h1>
+                <p class="hero-description">
+                    Exploring the intersection of language, technology, and pop culture through corpus linguistics and computational methods. Currently a Fulbright researcher investigating workplace discourse in American sitcoms.
+                </p>
+                <div class="hero-links">
+                    <a href="#projects" class="btn">View Research</a>
+                    <a href="mailto:karla.csuros@e-uvt.ro" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="https://lh3.google.com/u/0/d/1MMBVPl1ZBK20iFihA6MMoDi_cM6jD-zz=w400" 
+                     alt="Karla Csuros" 
+                     class="hero-image"
+                     loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header fade-in">
+            <div class="section-label">About Me</div>
+            <h2 class="section-title">Bridging Linguistics & Technology</h2>
+            <p class="section-description">
+                I'm a PhD student at West University of Timișoara, specializing in corpus linguistics with a focus on telecinematic discourse. My work combines computational methods with linguistic analysis to understand how language functions in contemporary media.
+            </p>
+        </div>
+
+        <div class="interests-grid fade-in">
+            <div class="interest-card">
+                <h3>Applied Corpus Linguistics</h3>
+                <p>Building and analyzing specialized corpora to uncover patterns in language use, from academic writing to workplace sitcoms.</p>
+            </div>
+            <div class="interest-card">
+                <h3>Telecinematic Stylistics</h3>
+                <p>Investigating the linguistic features of television and film, with a focus on workplace discourse and pop culture.</p>
+            </div>
+            <div class="interest-card">
+                <h3>Data-Driven Learning</h3>
+                <p>Developing corpus-based tools and pedagogical approaches to enhance language learning and literacy.</p>
+            </div>
+            <div class="interest-card">
+                <h3>Digital Humanities</h3>
+                <p>Creating digital tools and platforms that make linguistic research accessible to broader audiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="section-header fade-in">
+            <div class="section-label">Research Impact</div>
+            <h2 class="section-title">By the Numbers</h2>
+        </div>
+
+        <div class="stats-grid fade-in">
+            <div class="stat-card">
+                <div class="stat-number loading" id="citations">
+                    <div class="loading-spinner"></div>
+                </div>
+                <div class="stat-label">Citations</div>
+                <div class="stat-updated" id="citations-updated"></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number loading" id="h-index">
+                    <div class="loading-spinner"></div>
+                </div>
+                <div class="stat-label">h-index</div>
+                <div class="stat-updated" id="h-index-updated"></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number loading" id="i10-index">
+                    <div class="loading-spinner"></div>
+                </div>
+                <div class="stat-label">i10-index</div>
+                <div class="stat-updated" id="i10-updated"></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="publications">20+</div>
+                <div class="stat-label">Publications</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header fade-in">
+            <div class="section-label">Current Work</div>
+            <h2 class="section-title">Research Projects</h2>
+        </div>
+
+        <div class="projects-container">
+            <div class="project fade-in">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">PhD Research: Workplace Sitcoms Corpus</h3>
+                        <div class="project-period">2022 - Present</div>
+                    </div>
+                </div>
+                <p class="project-description">
+                    <strong>"Get to Work!"</strong> – A comprehensive corpus-based inquiry into the language of contemporary American workplace sitcoms. This dissertation explores how workplace discourse is represented and stylized in popular television, examining patterns of humor, professional interaction, and character development through computational linguistics methods.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">corpus linguistics</span>
+                    <span class="tag">discourse analysis</span>
+                    <span class="tag">telecinematic studies</span>
+                    <span class="tag">pop culture</span>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">LEMI: Romanian Readability Platform</h3>
+                        <div class="project-period">2023 - 2024</div>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Development of the first corpus-based readability assessment tool for Romanian children's literature. LEMI helps educators and parents select age-appropriate texts and supports literacy development through computational analysis of text complexity.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">NLP</span>
+                    <span class="tag">education technology</span>
+                    <span class="tag">literacy</span>
+                    <span class="tag">Romanian language</span>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Fulbright Research at University of Oregon</h3>
+                        <div class="project-period">2024 - 2025</div>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Nine-month visiting research fellowship at the LCR-ADS Research Center, focusing on learner corpus research and applied data science. Collaborating on projects exploring AI literacy, academic writing, and positive psychology in language learning.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">learner corpora</span>
+                    <span class="tag">AI literacy</span>
+                    <span class="tag">applied linguistics</span>
+                    <span class="tag">collaboration</span>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">ROGER Corpus Platform</h3>
+                        <div class="project-period">2020 - 2022</div>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Bilingual corpus of Romanian academic genres providing open-access tools for studying academic writing. Contributed to platform development, corpus annotation, and data analysis as research assistant on this Swiss National Science Foundation project.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">academic writing</span>
+                    <span class="tag">corpus platform</span>
+                    <span class="tag">bilingual research</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <div class="section-header fade-in">
+            <div class="section-label">Recognition</div>
+            <h2 class="section-title">Awards & Distinctions</h2>
+        </div>
+
+        <div class="awards-timeline fade-in">
+            <div class="award">
+                <div class="award-date">September 2024 - June 2025</div>
+                <h3 class="award-title">Fulbright Visiting Student Researcher</h3>
+                <p class="award-description">
+                    Prestigious doctoral research grant scholarship for a 9-month research stay at the LCR-ADS Research Center, University of Oregon, USA. Sponsored by The Romanian–U.S. Fulbright Commission.
+                </p>
+            </div>
+
+            <div class="award">
+                <div class="award-date">July 2024</div>
+                <h3 class="award-title">3rd Place, My 3-Minute PhD Thesis Competition</h3>
+                <p class="award-description">
+                    Third place prize at the final stage of the European competition organized by the UNITA Consortium at University of Pau and Pays de l'Adour, France. Presented research on workplace sitcoms to a general audience.
+                </p>
+            </div>
+
+            <div class="award">
+                <div class="award-date">2020</div>
+                <h3 class="award-title">Valedictorian, Summa Cum Laude</h3>
+                <p class="award-description">
+                    Graduated as valedictorian of the Faculty of Letters, History and Theology at West University of Timișoara with highest honors, receiving a Diploma of Excellence.
+                </p>
+            </div>
+
+            <div class="award">
+                <div class="award-date">2017</div>
+                <h3 class="award-title">Perfect Score at National Baccalaureate</h3>
+                <p class="award-description">
+                    Received perfect scores (10/10) at the Romanian National Baccalaureate Exams, earning a Diploma of Excellence from the city of Lipova.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="section-header fade-in">
+            <div class="section-label">Scholarly Output</div>
+            <h2 class="section-title">Selected Publications</h2>
+            <p class="section-description">Recent publications in corpus linguistics, readability assessment, and digital humanities</p>
+        </div>
+
+        <div class="publications-list">
+            <div class="publication fade-in">
+                <div class="publication-year">2025</div>
+                <div class="publication-title">Upgraded literacy: teacher training approaches to integrating corpus data and AI tools for school text readability adaptation</div>
+                <div class="publication-venue">Applied Corpus Linguistics, Vol. 6</div>
+                <a href="https://doi.org/10.1016/j.acorp.2025.100181" class="publication-link" target="_blank">View Publication →</a>
+            </div>
+
+            <div class="publication fade-in">
+                <div class="publication-year">2025</div>
+                <div class="publication-title">Comparing human and LLM proofreading in L2 writing: Impact on lexical and syntactic features</div>
+                <div class="publication-venue">Proceedings of BEA 2025: 20th Workshop on Innovative Use of NLP for Building Educational Applications</div>
+                <a href="https://aclanthology.org/2025.bea-1.2/" class="publication-link" target="_blank">View Publication →</a>
+            </div>
+
+            <div class="publication fade-in">
+                <div class="publication-year">2025</div>
+                <div class="publication-title">Corpus Integration into L2 Discipline-Specific Writing Courses: A Cross-Linguistic Intervention Study</div>
+                <div class="publication-venue">Journal of Academic Writing, Special Issue</div>
+                <a href="https://doi.org/10.18552/joaw.v15iS2.1119" class="publication-link" target="_blank">View Publication →</a>
+            </div>
+
+            <div class="publication fade-in">
+                <div class="publication-year">2024</div>
+                <div class="publication-title">Towards Building the LEMI Readability Platform for Children's Literature in the Romanian Language</div>
+                <div class="publication-venue">Proceedings of LREC-COLING 2024</div>
+                <a href="https://aclanthology.org/2024.lrec-main.1429/" class="publication-link" target="_blank">View Publication →</a>
+            </div>
+
+            <div class="publication fade-in">
+                <div class="publication-year">2024</div>
+                <div class="publication-title">Building WITS: Challenges in creating a corpus of workplace sitcoms</div>
+                <div class="publication-venue">In M. Chitez (Ed.), Inquiries in Digital Humanities: Pedagogies, Applications, Intersections</div>
+            </div>
+
+            <div class="publication fade-in">
+                <div class="publication-year">2022</div>
+                <div class="publication-title">Users Hate Blondes: Detecting Sexism in User Comments on Online Romanian News</div>
+                <div class="publication-venue">Proceedings of the Sixth Workshop on Online Abuse and Harms (WOAH)</div>
+                <a href="https://aclanthology.org/2022.woah-1.21/" class="publication-link" target="_blank">View Publication →</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://scholar.google.com/citations?user=_qGpZfAAAAAJ" class="btn" target="_blank">View All Publications on Google Scholar</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header fade-in">
+            <div class="section-label">Let's Connect</div>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-description">
+                I'm always interested in collaborating on corpus linguistics projects, discussing digital humanities research, or exploring new ways to make linguistic data accessible and meaningful.
+            </p>
+        </div>
+
+        <div class="footer-links fade-in" style="margin-top: 3rem;">
+            <a href="mailto:karla.csuros@e-uvt.ro">Email</a>
+            <a href="https://github.com/kcsuros" target="_blank">GitHub</a>
+            <a href="https://scholar.google.com/citations?user=_qGpZfAAAAAJ" target="_blank">Google Scholar</a>
+            <a href="https://orcid.org/0000-0002-9556-3724" target="_blank">ORCID</a>
+            <a href="https://www.webofscience.com/wos/author/record/LQK-6301-2024" target="_blank">Web of Science</a>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-note">
+            © 2026 Karla Csuros
+        </p>
+    </footer>
+
+    <script>
+        // Configuration - YOUR GOOGLE SCHOLAR USER ID
+        const SCHOLAR_USER_ID = '_qGpZfAAAAAJ';
+
+        // Fetch Google Scholar stats
+        async function fetchScholarStats() {
+            try {
+                // Using a CORS proxy to fetch Scholar data
+                const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                const scholarUrl = `https://scholar.google.com/citations?user=${SCHOLAR_USER_ID}&hl=en`;
+                
+                const response = await fetch(proxyUrl + encodeURIComponent(scholarUrl));
+                const html = await response.text();
+                
+                // Parse HTML to extract stats
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // Extract citations, h-index, and i10-index
+                const statsTable = doc.querySelector('#gsc_rsb_st');
+                if (statsTable) {
+                    const rows = statsTable.querySelectorAll('tr');
+                    
+                    if (rows.length >= 2) {
+                        const allTimeValues = rows[1].querySelectorAll('td');
+                        
+                        const citations = allTimeValues[1]?.textContent.trim() || '28';
+                        const hIndex = allTimeValues[2]?.textContent.trim() || '4';
+                        const i10Index = allTimeValues[3]?.textContent.trim() || '3';
+                        
+                        updateStats(citations, hIndex, i10Index);
+                        return;
+                    }
+                }
+                
+                // Fallback if parsing fails
+                updateStats('28', '4', '3');
+                
+            } catch (error) {
+                console.log('Using cached stats:', error);
+                // Fallback to cached values
+                updateStats('28', '4', '3');
+            }
+        }
+
+        function updateStats(citations, hIndex, i10Index) {
+            const citationsEl = document.getElementById('citations');
+            const hIndexEl = document.getElementById('h-index');
+            const i10IndexEl = document.getElementById('i10-index');
+            
+            // Animate number changes
+            animateValue(citationsEl, parseInt(citations));
+            animateValue(hIndexEl, parseInt(hIndex));
+            animateValue(i10IndexEl, parseInt(i10Index));
+            
+            // Update timestamp
+            const now = new Date().toLocaleDateString('en-US', { 
+                month: 'short', 
+                year: 'numeric' 
+            });
+            
+            document.getElementById('citations-updated').textContent = `Updated ${now}`;
+            document.getElementById('h-index-updated').textContent = `Updated ${now}`;
+            document.getElementById('i10-updated').textContent = `Updated ${now}`;
+        }
+
+        function animateValue(element, endValue) {
+            element.classList.remove('loading');
+            
+            const duration = 1000;
+            const startValue = 0;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const currentValue = Math.floor(startValue + (endValue - startValue) * easeOutQuart);
+                
+                element.textContent = currentValue;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = endValue;
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fetch stats when page loads
+        window.addEventListener('load', () => {
+            fetchScholarStats();
+        });
+
+        // Refresh stats every 24 hours if page is still open
+        setInterval(fetchScholarStats, 24 * 60 * 60 * 1000);
+    </script>
+</body>
+</html>
